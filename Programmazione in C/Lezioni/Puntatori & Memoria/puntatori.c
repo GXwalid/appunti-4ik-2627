@@ -1,4 +1,6 @@
 #include <stdio.h>
+#include <stdlib.h>
+
 
 void clear()
 {
@@ -186,8 +188,39 @@ void esempio7()
         printf("%p ", *(pArr2 + i));
     }
 }
+int prova()
+{
+    return 5;
+}
+void esempio8()
+
+{
+    //stack
+    int i = 10;
+    i = prova();
+    //heap
+    //malloc lavora dentro memoria heap
+    int *p = malloc(sizeof(int));
+    *p = 5;
+    printf("%p \n", p);
+    printf("%d \n", *p);
+    printf("%p \n", p + 1);
+    printf("%d \n", *(p + 1));
+    // malloc(sizeof(float));
+    // malloc(sizeof(int *));
+
+    int *p2 = malloc(sizeof(float));
+
+    if(p2 == NULL)
+    {
+        printf("errore nella malloc")
+        exit(EXIT_FAILURE)
+    }
+}
+
+
 
 void main()
 {
-    esempio7();
+    esempio8();
 }
