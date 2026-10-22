@@ -211,11 +211,22 @@ void esempio8()
 
     int *p2 = malloc(sizeof(float));
 
-    if(p2 == NULL)
+    if(p2 != NULL)
     {
-        printf("errore nella malloc")
-        exit(EXIT_FAILURE)
+        printf("errore nella malloc");
+        exit(EXIT_FAILURE);
     }
+    *p2 = 5.5;
+    printf("%f \n", *p2);
+
+    //memory leak: la variabile non verra mai più utilizzata e non
+    //viene rimossa dalla memoria
+ 
+    free(p2);
+    p2 = NULL;
+    printf("%p \n", p2);
+    printf("%d \n", *p2);
+
 }
 
 
